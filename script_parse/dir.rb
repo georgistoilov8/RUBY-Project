@@ -81,6 +81,7 @@ File.open('rep.txt', 'r') do |rep|
     end
     delete_rep(origin_directory)
   end
+  sort_csv 'first_sort.csv'
   join_repetitive
   sort_csv 'result.csv'
   delete_file 'first_sort.csv'

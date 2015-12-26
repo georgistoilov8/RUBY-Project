@@ -6,9 +6,9 @@ class Result
   attr_accessor :word_counter
   attr_accessor :marks
 
-  def initialize
-    @marks = 0
-    @word_counter = Hash.new(0)
+  def initialize(word_counts, marks_count)
+    @marks = marks_count
+    @word_counter = word_counts
   end
 
   def to_csv

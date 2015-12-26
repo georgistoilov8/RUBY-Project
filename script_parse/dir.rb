@@ -12,6 +12,8 @@ def delete_file file_name
   `rm #{file_name}`
 end
 
+format = ARGV[0]
+
 def sort_csv csv_to_sort
 	my_csv = CSV.read csv_to_sort
   my_csv.sort! do |a,b|
@@ -65,22 +67,45 @@ def join_repetitive
   end
 end
 
-delete_file 'first_sort.csv'
+delete_file 'repository.csv'
 
+count = 0
 File.open('rep.txt', 'r') do |rep|
   rep.each_line do |line|
     clone(line)
     directory = line.split('/').last
     origin_directory = directory
     directory = directory.gsub("\n",'')
-    directory.insert(directory.size, '/**/*.rb')
+    if(format == 'ruby')
+      directory.insert(directory.size, '/**/*.rb')
+    elsif (format == 'java')
+      directory.insert(directory.size, '/**/*.java')
+    elsif (format == 'c++')
+      directory.insert(directory.size, '/**/*.cc')
+    else
+      raise NoMethodError, "invalid \'#{format}\' format."
+    end
+    lines_in_this_repository = 0
     Dir.glob(directory).each do |f|
-      puts 1
-      `ruby script.rb #{f}`
-      puts 2
+      if(count <= 100000)
+        puts 1
+        `ruby script.rb #{f}`
+        puts 2
+        file = File.open(f, 'r')
+        file.each_line do |row|
+          count += 1
+          lines_in_this_repository += 1
+        end
+        puts f
+      end
+    end
+    CSV.open('repository.csv', 'a') do |csv|
+      line = line.gsub("\n",'')
+      csv << [line, lines_in_this_repository]
     end
     delete_rep(origin_directory)
   end
+  sort_csv 'first_sort.csv'
   join_repetitive
   sort_csv 'result.csv'
   delete_file 'first_sort.csv'

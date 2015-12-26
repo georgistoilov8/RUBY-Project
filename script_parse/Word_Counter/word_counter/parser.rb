@@ -19,7 +19,7 @@ module WordCounter
     counter = counter*55
     string = string.downcase.split
     string.each do |word|
-      word = word.gsub(/[\W+_]/, ' ')
+      word = word.gsub(/[\W+]/, ' ')
       if(word.include?(" "))
         word = word.split(" ")
         word.each do |b|

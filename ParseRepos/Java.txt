@@ -1,0 +1,14 @@
+https://github.com/jd-alexander/LikeButton.git
+https://github.com/renaudcerrato/ToggleDrawable.git
+https://github.com/liuling07/SimpleNews.git
+https://github.com/TUBB/SwipeMenuRecyclerView.git
+https://github.com/Danylo2006/HashTagHelper.git
+https://github.com/hanks-zyh/HTextView.git
+https://github.com/hpfs0/DragScaleCircleView.git
+https://github.com/l123456789jy/Lazy.git
+https://github.com/googlesamples/easypermissions.git
+https://github.com/hanks-zyh/SmallBang.git
+https://github.com/frogermcs/LikeAnimation.git
+https://github.com/scottyab/showhidepasswordedittext.git
+https://github.com/naver/pinpoint.git
+https://github.com/ZhaoKaiQiang/JianDanRxJava.git

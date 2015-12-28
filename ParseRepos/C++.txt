@@ -1,2 +1,6 @@
 https://github.com/apple/swift.git
 https://github.com/apple/swift-lldb.git
+https://github.com/tensorflow/tensorflow.git
+https://github.com/tesseract-ocr/tesseract.git
+https://github.com/atom/electron.git
+https://github.com/koekeishiya/kwm

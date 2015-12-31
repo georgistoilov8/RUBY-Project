@@ -1,0 +1,10 @@
+https://github.com/peter-murach/tty-prompt
+https://github.com/jekyll/jekyll
+https://github.com/Homebrew/homebrew
+https://github.com/rails/rails
+https://github.com/httprb/http
+https://github.com/jondot/awesome-react-native
+https://github.com/chriseidhof/pomotv
+https://github.com/thoughtbot/suspenders
+https://github.com/mitchellh/vagrant
+https://github.com/gitlabhq/gitlabhq

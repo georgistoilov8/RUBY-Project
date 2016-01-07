@@ -9,3 +9,4 @@ https://github.com/apple/swift-clang.git
 https://github.com/Microsoft/microsoft-pdb.git
 https://github.com/facebook/hhvm.git
 https://github.com/facebook/proxygen.git
+https://github.com/facebook/pop.git

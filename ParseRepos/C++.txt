@@ -4,3 +4,6 @@ https://github.com/tensorflow/tensorflow.git
 https://github.com/tesseract-ocr/tesseract.git
 https://github.com/atom/electron.git
 https://github.com/koekeishiya/kwm
+https://github.com/secretlabs/MicroFrameworkSDK-Mono.git
+https://github.com/apple/swift-clang.git
+https://github.com/Microsoft/microsoft-pdb.git

@@ -10,3 +10,7 @@ https://github.com/Microsoft/microsoft-pdb.git
 https://github.com/facebook/hhvm.git
 https://github.com/facebook/proxygen.git
 https://github.com/facebook/pop.git
+https://github.com/lchorbadjiev/teach2014-2015.git
+https://github.com/lchorbadjiev/teach2013-2014.git
+https://github.com/lchorbadjiev/teach2015-2016.git
+https://github.com/nwjs/nw.js.git

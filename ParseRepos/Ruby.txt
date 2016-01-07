@@ -9,3 +9,15 @@ https://github.com/thoughtbot/suspenders
 https://github.com/mitchellh/vagrant
 https://github.com/gitlabhq/gitlabhq
 https://github.com/agileorbit-cookbooks/java.git
+https://github.com/thebravoman/software_engineering_2014.git
+https://github.com/thebravoman/software_engineering_2015.git
+https://github.com/thebravoman/software_engineering_2013.git
+https://github.com/github/gemoji
+https://github.com/Instagram/instagram-ruby-gem.git
+https://github.com/jasmine/jasmine-gem.git
+https://github.com/geminabox/geminabox.git
+https://github.com/keenlabs/keen-gem.git
+https://github.com/cloudinary/cloudinary_gem.git
+https://github.com/rollbar/rollbar-gem.git
+https://github.com/github/pages-gem.git
+https://github.com/defunkt/github-gem.git

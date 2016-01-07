@@ -5,7 +5,7 @@ module WordCounter
   class Parser
 
     def parse_string (string)
-      word_pattern = /\b[A-Za-z0-9]+\b/i
+      word_pattern = /\b[A-Za-z]+\b/i
       punctuation_pattern = /[\p{P}\p{S}]/
       words = {}
       punctuation_marks = 0

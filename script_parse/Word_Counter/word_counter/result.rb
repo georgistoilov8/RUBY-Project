@@ -15,11 +15,9 @@ class Result
     CSV.open('first_sort.csv', 'a', {quote_char:" "}) do |csv|
 			sorted_array = @word_counter.sort_by { |key, value| [-value, key] }
       sorted_array.each do |key, value|
-        #puts "#{key},#{value}"
         csv << [key,value]
       end
 		  if @marks != 0
-				#puts "\"marks\",#{@marks}"
         csv << ['Marks', @marks]
       end
     end

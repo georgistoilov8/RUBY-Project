@@ -1,0 +1,16 @@
+https://github.com/apple/swift
+https://github.com/apple/swift-lldb
+https://github.com/tensorflow/tensorflow
+https://github.com/tesseract-ocr/tesseract
+https://github.com/atom/electron
+https://github.com/koekeishiya/kwm
+https://github.com/secretlabs/MicroFrameworkSDK-Mono
+https://github.com/apple/swift-clang
+https://github.com/Microsoft/microsoft-pdb
+https://github.com/facebook/hhvm
+https://github.com/facebook/proxygen
+https://github.com/facebook/pop
+https://github.com/lchorbadjiev/teach2014-2015
+https://github.com/lchorbadjiev/teach2013-2014
+https://github.com/lchorbadjiev/teach2015-2016
+https://github.com/nwjs/nw.js

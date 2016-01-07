@@ -98,13 +98,11 @@ delete_file 'repository.csv'
 repository = nil
 
 if(format == 'ruby')
-  repository = '../ParseRepos/Ruby.txt'
+  repository = '../ParseRepos/ruby.txt'
 elsif (format == 'c++')
-  repository = '../ParseRepos/C++.txt'
+  repository = '../ParseRepos/cplusplus.txt'
 elsif (format == 'java')
-  repository = '../ParseRepos/Java.txt'
-else
-  raise NoMethodError, "invalid \'#{format}\' format."
+  repository = '../ParseRepos/java.txt'
 end
 
 count = 0
@@ -134,6 +132,8 @@ File.open(repository, 'r') do |rep|
           directory.insert(directory.size, '/**/*.cpp')
           i += 1
         end
+      else
+        raise NoMethodError, "invalid \'#{format}\' format."
       end
       puts directory
       Dir.glob(directory).each do |f|

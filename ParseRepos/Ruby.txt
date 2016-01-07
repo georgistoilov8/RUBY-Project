@@ -47,3 +47,8 @@ https://github.com/rack/rack.git
 https://github.com/edavis10/redmine.git
 https://github.com/solnic/virtus.git
 https://github.com/mbj/vanguard.git
+https://github.com/charliesome/better_errors.git
+https://github.com/Shopify/liquid.git
+https://github.com/fastlane/snapshot.git
+https://github.com/MiniProfiler/rack-mini-profiler.git
+https://github.com/nomad/shenzhen.git

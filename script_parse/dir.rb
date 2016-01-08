@@ -68,11 +68,24 @@ def join_repetitive
   end
 end
 
+
+repository = nil
+res_of_rep = nil
+if(format == 'ruby')
+  repository = '../ParseRepos/ruby.txt'
+  res_of_rep = 'ruby.json'
+elsif (format == 'c++')
+  repository = '../ParseRepos/cplusplus.txt'
+  res_of_rep = 'cpp.json'
+elsif (format == 'java')
+  repository = '../ParseRepos/java.txt'
+  res_of_rep = 'java.json'
+else
+  raise NoMethodError, "invalid \'#{format}\' format."
+end
+
 def make_json csv
   data = File.open('result.csv', 'r')
-  #a = CSV.parse(data).to_json
-  #a = a.gsub(',', ':')
-  #puts a
   occur = 0
   hash = Hash[ CSV.read('result.csv').map do |row|
     if(row[0] == 'Marks')
@@ -82,28 +95,15 @@ def make_json csv
       [ row[0], row[1].to_i]
     end
   end ]
-  #puts hash
+
   hash["NumberOfMarksInCode"] = occur
-  # hash.tap { |hs| hs.delete(0) }
-  ##json = hash.to_json
   hash.shift
-  #puts JSON.pretty_generate(hash)
-  File.open('result.json', 'w') do |f|
+  File.open(res_of_rep, 'w') do |f|
     f << JSON.pretty_generate(hash)
   end
 end
 
 delete_file 'repository.csv'
-
-repository = nil
-
-if(format == 'ruby')
-  repository = '../ParseRepos/ruby.txt'
-elsif (format == 'c++')
-  repository = '../ParseRepos/cplusplus.txt'
-elsif (format == 'java')
-  repository = '../ParseRepos/java.txt'
-end
 
 count = 0
 File.open(repository, 'r') do |rep|
@@ -132,8 +132,6 @@ File.open(repository, 'r') do |rep|
           directory.insert(directory.size, '/**/*.cpp')
           i += 1
         end
-      else
-        raise NoMethodError, "invalid \'#{format}\' format."
       end
       puts directory
       Dir.glob(directory).each do |f|

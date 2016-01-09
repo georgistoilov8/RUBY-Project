@@ -84,7 +84,7 @@ else
   raise NoMethodError, "invalid \'#{format}\' format."
 end
 
-def make_json csv
+def make_json(csv, res_of_rep)
   data = File.open('result.csv', 'r')
   occur = 0
   hash = Hash[ CSV.read('result.csv').map do |row|
@@ -104,7 +104,7 @@ def make_json csv
 end
 
 delete_file 'repository.csv'
-
+sum = 0
 count = 0
 File.open(repository, 'r') do |rep|
   rep.each_line do |line|
@@ -133,9 +133,8 @@ File.open(repository, 'r') do |rep|
           i += 1
         end
       end
-      puts directory
       Dir.glob(directory).each do |f|
-        if(count <= 100000)
+        #if(count <= 100000)
           puts 1
           `ruby script.rb #{f}`
           puts 2
@@ -145,12 +144,13 @@ File.open(repository, 'r') do |rep|
             lines_in_this_repository += 1
           end
           puts f
-        end
+        #end
       end
     end while i < 3
     CSV.open('repository.csv', 'a') do |csv|
       line = line.gsub("\n",'')
       csv << [line, lines_in_this_repository]
+      sum = sum + lines_in_this_repository
     end
     delete_rep(origin_directory)
   end
@@ -158,5 +158,6 @@ File.open(repository, 'r') do |rep|
   join_repetitive
   sort_csv 'result.csv'
   delete_file 'first_sort.csv'
-  make_json 'result.csv'
+  make_json('result.csv',res_of_rep)
 end
+puts "All rows in all repositories:"+sum

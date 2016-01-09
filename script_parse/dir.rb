@@ -14,6 +14,10 @@ def delete_file file_name
   `rm #{file_name}`
 end
 
+def make_svg result
+  `ruby ../SVG_program/svg.rb #{result}`
+end
+
 format = ARGV[0]
 
 def sort_csv csv_to_sort
@@ -103,10 +107,20 @@ def make_json(csv, res_of_rep)
   end
 end
 
+def remove_makrs csv
+  File.open('SVG_result.csv', 'w+') do |outf|
+    File.open(csv) do |inf|
+      inf.each_line.with_index do |line, i|
+        outf.write line unless i==0
+      end
+    end
+  end
+end
+
 delete_file 'repository.csv'
 sum = 0
 count = 0
-File.open(repository, 'r') do |rep|
+File.open('rep.txt', 'r') do |rep|
   rep.each_line do |line|
     clone(line)
     lines_in_this_repository = 0
@@ -159,5 +173,7 @@ File.open(repository, 'r') do |rep|
   sort_csv 'result.csv'
   delete_file 'first_sort.csv'
   make_json('result.csv',res_of_rep)
+  remove_makrs 'result.csv'
+  make_svg 'SVG_result.csv'
 end
-puts "All rows in all repositories:"+sum
+#puts "All rows in all repositories:"+sum

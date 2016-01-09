@@ -149,7 +149,7 @@ File.open('rep.txt', 'r') do |rep|
       end
       Dir.glob(directory).each do |f|
         #if(count <= 100000)
-        if(File.file?(f)) do
+        if(File.file?(f))
           puts 1
           `ruby script.rb #{f}`
           puts 2

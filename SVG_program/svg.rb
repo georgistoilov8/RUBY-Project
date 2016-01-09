@@ -8,7 +8,7 @@ end
 SYMBOL = 10
 WIDTH_GRAPH = 50
 height = 517
-height_of_graph = 500
+height_of_graph = 500.0
 csv = ARGV[0]
 csv = File.read csv
 width = 60
@@ -17,8 +17,10 @@ count = 0
 keeper_of_digit = ""
 checker = 1
 less_word = 0
+most_word = 0
 csv.each_line { |line|
   if checker != 0
+    most_word = line.split(",").last.to_f
     help = line.split(",")
     keeper_of_digit = help[1]
     checker = 0
@@ -42,7 +44,8 @@ File.open('svg_program.svg','w')  do |svg|
         x = x + 55 if checker != 1
         checker = 0
       else
-        height_of_graph = height_of_graph - height_of_graph/2
+        puts line[1].to_i/most_word
+        height_of_graph = (line[1].to_f / most_word)* 499 + 1
         x = x + 55
         y = 520 - height_of_graph
       end

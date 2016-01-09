@@ -149,6 +149,7 @@ File.open('rep.txt', 'r') do |rep|
       end
       Dir.glob(directory).each do |f|
         #if(count <= 100000)
+        if(File.file?(f)) do
           puts 1
           `ruby script.rb #{f}`
           puts 2
@@ -159,6 +160,7 @@ File.open('rep.txt', 'r') do |rep|
           end
           puts f
         #end
+        end
       end
     end while i < 3
     CSV.open('repository.csv', 'a') do |csv|

@@ -125,7 +125,7 @@ end
 delete_file 'svg_program.svg'
 sum = 0
 count = 0
-File.open('rep.txt', 'r') do |rep|
+File.open(repository, 'r') do |rep|
   rep.each_line do |line|
     clone(line)
     lines_in_this_repository = 0

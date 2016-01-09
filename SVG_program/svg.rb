@@ -10,6 +10,7 @@ WIDTH_GRAPH = 50
 height = 517
 height_of_graph = 500.0
 csv = ARGV[0]
+name = ARGV[1]
 csv = File.read csv
 width = 60
 max_size_of_text = 0
@@ -36,7 +37,7 @@ checker = 1
 x = 10
 y = 20
 height = height + (max_size_of_text * 15 + 15)
-File.open('svg_program.svg','w')  do |svg|
+File.open(name,'w')  do |svg|
   svg.write('<svg xmlns="http://www.w3.org/2000/svg" width="'+width.to_s+'" height="'+height.to_s+'">')
   csv.each_line do |line|
       line = line.split(",")

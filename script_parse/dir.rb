@@ -14,8 +14,8 @@ def delete_file file_name
   `rm #{file_name}`
 end
 
-def make_svg result
-  `ruby ../SVG_program/svg.rb #{result}`
+def make_svg result,name
+  `ruby ../SVG_program/svg.rb #{result} #{name}`
 end
 
 format = ARGV[0]
@@ -75,15 +75,19 @@ end
 
 repository = nil
 res_of_rep = nil
+name_of_svg = nil
 if(format == 'ruby')
   repository = '../ParseRepos/ruby.txt'
   res_of_rep = 'ruby.json'
+  name_of_svg = 'ruby.svg'
 elsif (format == 'c++')
   repository = '../ParseRepos/cplusplus.txt'
   res_of_rep = 'cpp.json'
+  name_of_svg = 'cpp.svg'
 elsif (format == 'java')
   repository = '../ParseRepos/java.txt'
   res_of_rep = 'java.json'
+  name_of_svg = 'java.svg'
 else
   raise NoMethodError, "invalid \'#{format}\' format."
 end
@@ -117,7 +121,8 @@ def remove_makrs csv
   end
 end
 
-delete_file 'repository.csv'
+#delete_file 'repository.csv'
+delete_file 'svg_program.svg'
 sum = 0
 count = 0
 File.open('rep.txt', 'r') do |rep|
@@ -149,7 +154,7 @@ File.open('rep.txt', 'r') do |rep|
       end
       Dir.glob(directory).each do |f|
         #if(count <= 100000)
-        if(File.file?(f)) do
+        if(File.file?(f))
           puts 1
           `ruby script.rb #{f}`
           puts 2
@@ -176,6 +181,6 @@ File.open('rep.txt', 'r') do |rep|
   delete_file 'first_sort.csv'
   make_json('result.csv',res_of_rep)
   remove_makrs 'result.csv'
-  make_svg 'SVG_result.csv'
+  make_svg('SVG_result.csv',name_of_svg)
 end
 #puts "All rows in all repositories:"+sum
